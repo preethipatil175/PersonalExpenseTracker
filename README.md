@@ -51,16 +51,24 @@ It lets you add, view, filter, export, and delete expenses — and visualizes sp
    python -m venv venv
 ```
 3.**Activate the Environment**
+```
    venv\Scripts\activate
+```
 
 4.**Install Dependencies**
+```
    pip install -r requirements.txt
+```
 
 5.**Run the App**
+```
    python app.py
+```
 
 6.**Visit the Browser**
+```
   http://127.0.0.1:5000
+```
 
 ---
 
