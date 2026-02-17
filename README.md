@@ -42,12 +42,12 @@ It lets you add, view, filter, export, and delete expenses — and visualizes sp
 ## 📦 Installation
 
 1. **Clone the repository**
-   ```bash
+```bash
    git clone https://github.com/preethipatil175/PersonalExpenseTracker.git
    cd PersonalExpenseTracker
 
 2.**Create a Virtual Environment**
-  ```
+```
    python -m venv venv
 ```
 3.**Activate the Environment**
