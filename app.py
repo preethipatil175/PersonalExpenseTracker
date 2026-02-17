@@ -50,13 +50,27 @@ def index():
 
     expenses=q.order_by(Expense.date.desc()).all()
     total=round(sum(e.amount for e in expenses),2)
+    cat_q=db.session.query(Expense.category,func.sum(Expense.amount)).group_by(Expense.category)
+
+    if start_date:
+        cat_q=cat_q.filter(Expense.date>=start_date)
+    if end_date:
+        cat_q=cat_q.filter(Expense.date<=end_date)
+    if selected_category:
+        cat_q=cat_q.filter(Expense.category==selected_category)
+    
+    cat_rows=cat_q.group_by(Expense.category).all()
+    cat_labels=[c for c,_ in cat_rows]
+    cat_values=[round(float(s or 0),2) for _,s in cat_rows]
     return render_template('index.html',expenses=expenses, 
                            categories=CATEGORIES, 
                            total=total,
                            start_str=start_str,
                            end_str=end_str,
                            today=date.today().isoformat(),
-                           selected_category=selected_category)
+                           selected_category=selected_category,
+                           cat_labels=cat_labels,
+                           cat_values=cat_values)
 
 @app.route('/add', methods=['POST'])
 def add():
