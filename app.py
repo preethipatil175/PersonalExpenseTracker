@@ -2,6 +2,7 @@
 from flask import Flask,render_template,request,url_for,make_response,redirect,flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import date, datetime
+from sqlalchemy import func
 
 app=Flask(__name__)
 
