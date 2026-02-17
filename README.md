@@ -47,8 +47,9 @@ It lets you add, view, filter, export, and delete expenses — and visualizes sp
    cd PersonalExpenseTracker
 
 2.**Create a Virtual Environment**
+  ```
    python -m venv venv
-
+```
 3.**Activate the Environment**
    venv\Scripts\activate
 
@@ -65,6 +66,7 @@ It lets you add, view, filter, export, and delete expenses — and visualizes sp
 
 ## Project Structure
 
+```
 📦 PersonalExpenseTracker
  ┣ 📂 templates
  ┃ ┣ edit.html
@@ -72,4 +74,5 @@ It lets you add, view, filter, export, and delete expenses — and visualizes sp
  ┣ 📜 app.py
  ┣ 📜 requirements.txt
  ┗ README.md
+```
 
